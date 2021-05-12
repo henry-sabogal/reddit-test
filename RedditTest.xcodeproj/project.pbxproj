@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7326F79B264C2EBB00A2A9A8 /* DownloadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7326F79A264C2EBB00A2A9A8 /* DownloadImage.swift */; };
 		73301CD7264B993300D2BD74 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73301CD6264B993300D2BD74 /* PostCell.swift */; };
 		73765D222645046E00B6B9FA /* TopViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73765D212645046E00B6B9FA /* TopViewModel.swift */; };
 		73975373264206EC0038E044 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73975372264206EC0038E044 /* AppDelegate.swift */; };
@@ -42,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7326F79A264C2EBB00A2A9A8 /* DownloadImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadImage.swift; sourceTree = "<group>"; };
 		73301CD6264B993300D2BD74 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		73765D212645046E00B6B9FA /* TopViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopViewModel.swift; sourceTree = "<group>"; };
 		7397536F264206EC0038E044 /* RedditTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RedditTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -90,6 +92,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7326F799264C2EAD00A2A9A8 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				7326F79A264C2EBB00A2A9A8 /* DownloadImage.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		73975366264206EB0038E044 = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +123,7 @@
 		73975371264206EC0038E044 /* RedditTest */ = {
 			isa = PBXGroup;
 			children = (
+				7326F799264C2EAD00A2A9A8 /* Utils */,
 				739753BB2642517B0038E044 /* Presenters */,
 				739753BA264251740038E044 /* Views */,
 				739753B426422B670038E044 /* ViewModels */,
@@ -320,6 +331,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				739753BD2642521C0038E044 /* ViewControllerPresenter.swift in Sources */,
+				7326F79B264C2EBB00A2A9A8 /* DownloadImage.swift in Sources */,
 				73D5955F2648A0E10039E86F /* TopModel.swift in Sources */,
 				739753B626422BF10038E044 /* AccessAuthViewModel.swift in Sources */,
 				73975377264206EC0038E044 /* ViewController.swift in Sources */,

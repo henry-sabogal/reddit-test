@@ -11,4 +11,6 @@ import UIKit
 class PostCell: UITableViewCell{
     @IBOutlet weak var author: UILabel?
     @IBOutlet weak var created: UILabel?
+    @IBOutlet weak var imagePost: UIImageView?
+    @IBOutlet weak var numComments: UILabel?
 }

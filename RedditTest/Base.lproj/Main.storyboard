@@ -60,17 +60,36 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comments" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zQZ-i7-hm3">
+                                                    <rect key="frame" x="155" y="74" width="83" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jgs-x7-8cY">
+                                                    <rect key="frame" x="252" y="74" width="142" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="142" id="GcP-W5-JnX"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="yrC-OV-xMi" firstAttribute="baseline" secondItem="KvK-tG-ugd" secondAttribute="baseline" id="0Dw-oH-EUK"/>
+                                                <constraint firstItem="zQZ-i7-hm3" firstAttribute="top" secondItem="yrC-OV-xMi" secondAttribute="bottom" constant="8" symbolic="YES" id="0rG-dM-rsX"/>
                                                 <constraint firstItem="Us2-MW-jdc" firstAttribute="leading" secondItem="kHc-Ms-H77" secondAttribute="leadingMargin" id="4e2-Fy-pLJ"/>
                                                 <constraint firstItem="Wne-Oi-TiK" firstAttribute="leading" secondItem="Us2-MW-jdc" secondAttribute="trailing" constant="15" id="6Tz-sa-FTR"/>
                                                 <constraint firstItem="yrC-OV-xMi" firstAttribute="top" secondItem="Wne-Oi-TiK" secondAttribute="bottom" constant="8" symbolic="YES" id="Afh-8p-SYv"/>
                                                 <constraint firstItem="Wne-Oi-TiK" firstAttribute="baseline" secondItem="R9h-Jm-44G" secondAttribute="baseline" id="Igv-iS-Rio"/>
                                                 <constraint firstItem="Us2-MW-jdc" firstAttribute="top" secondItem="Wne-Oi-TiK" secondAttribute="top" id="Kjg-Dn-2bg"/>
                                                 <constraint firstItem="R9h-Jm-44G" firstAttribute="trailing" secondItem="KvK-tG-ugd" secondAttribute="trailing" id="QWr-X0-msH"/>
+                                                <constraint firstItem="jgs-x7-8cY" firstAttribute="trailing" secondItem="KvK-tG-ugd" secondAttribute="trailing" id="R5r-Yh-ZON"/>
                                                 <constraint firstItem="KvK-tG-ugd" firstAttribute="leading" secondItem="yrC-OV-xMi" secondAttribute="trailing" constant="10" id="T1e-sk-V4q"/>
                                                 <constraint firstItem="Us2-MW-jdc" firstAttribute="top" secondItem="kHc-Ms-H77" secondAttribute="topMargin" constant="5" id="Z4i-vo-J87"/>
+                                                <constraint firstItem="jgs-x7-8cY" firstAttribute="baseline" secondItem="zQZ-i7-hm3" secondAttribute="baseline" id="mJY-tk-y2o"/>
+                                                <constraint firstItem="jgs-x7-8cY" firstAttribute="leading" secondItem="zQZ-i7-hm3" secondAttribute="trailing" constant="14" id="rF9-L3-ZX2"/>
                                                 <constraint firstItem="Wne-Oi-TiK" firstAttribute="leading" secondItem="yrC-OV-xMi" secondAttribute="leading" id="rLK-AP-h5j"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="Us2-MW-jdc" secondAttribute="bottom" constant="3" id="s4e-qe-Vie"/>
                                                 <constraint firstItem="R9h-Jm-44G" firstAttribute="leading" secondItem="KvK-tG-ugd" secondAttribute="leading" id="xjn-cO-VjI"/>
@@ -79,6 +98,8 @@
                                         <connections>
                                             <outlet property="author" destination="R9h-Jm-44G" id="zfw-k8-3lp"/>
                                             <outlet property="created" destination="KvK-tG-ugd" id="kGG-r3-DGV"/>
+                                            <outlet property="imagePost" destination="Us2-MW-jdc" id="dP2-RB-Pgu"/>
+                                            <outlet property="numComments" destination="jgs-x7-8cY" id="un6-g7-M4b"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

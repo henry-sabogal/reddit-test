@@ -14,44 +14,6 @@ class TopViewModel: ObservableObject{
     
     @Published private(set) var topList: [TopModel] = []
     
-    func fetchData(token: String){
-        let request = createRequest(token: token)
-        let session = URLSession(configuration: URLSessionConfiguration.default, delegate: nil, delegateQueue: nil)
-       
-
-        self.cancellable = session.dataTaskPublisher(for: request)
-        .tryMap { output in
-            guard let response = output.response as? HTTPURLResponse, response.statusCode == 200 else {
-                throw HTTPError.statusCode
-            }
-            return output.data
-        }
-        .decode(type: Post.self, decoder: JSONDecoder())
-        .eraseToAnyPublisher()
-        .handleEvents(receiveSubscription: { (subscription) in
-            print("Receive subscription")
-        }, receiveOutput: { output in
-            print("Received output: \(output)")
-        }, receiveCompletion: { _ in
-            print("receive completion")
-        }, receiveCancel: {
-            print("Receive cancel")
-        }, receiveRequest: { demand in
-            print("Receive Request: \(demand)")
-        })
-        .receive(on: DispatchQueue.main)
-        .sink(receiveCompletion: { completion in
-            switch completion {
-            case .finished:
-                break
-            case .failure(let error):
-                fatalError(error.localizedDescription)
-            }
-        }, receiveValue: { posts in
-            print(posts.data.dist)
-        })        
-    }
-    
     func getTopPosts(token: String){
         let request = createRequest(token: token)
         
@@ -101,6 +63,16 @@ class TopViewModel: ObservableObject{
     private func createTopModel(data: [String:Any]) -> TopModel{
         let author = data["author"] as? String ?? ""
         let createdUTC = data["created_utc"] as? Int ?? 0
-        return TopModel(author: author, createdUTC: createdUTC)
+        let title = data["title"] as? String ?? ""
+        let thumbnail = data["thumbnail"] as? String ?? ""
+        let preview = data["thumbnail"] as? String ?? ""
+        let numComments = data["num_comments"] as? Int ?? 0
+        
+        return TopModel(author: author,
+                        createdUTC: createdUTC,
+                        title: title,
+                        thumbnail: thumbnail,
+                        preview: preview,
+                        numComments: numComments)
     }
 }

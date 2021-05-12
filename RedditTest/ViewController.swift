@@ -32,8 +32,18 @@ extension ViewController: UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: "topCellType", for: indexPath) as! PostCell
         
         cell.author?.text = topList[indexPath.row].author
-        cell.created?.text = String(topList[indexPath.row].createdString)
+        cell.created?.text = topList[indexPath.row].createdString
+        cell.numComments?.text = String(topList[indexPath.row].numComments)
         
+        cell.imagePost?.image = nil
+        if let imageURL = try? self.topList[indexPath.row].getURLImage(){
+            let downloadImage = DownloadImage()
+            downloadImage.loadData(url: imageURL){ (data, error) in
+                if error == nil && data != nil {
+                    cell.imagePost?.image = UIImage(data: data ?? Data())
+                }
+            }
+        }
         return cell
     }
 }

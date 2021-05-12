@@ -7,36 +7,17 @@
 
 import Foundation
 
-// MARK: - Post
-struct Post: Codable {
-    let data: PostData
-}
-
-// MARK: - WelcomeData
-struct PostData: Codable {
-    let dist: Int
-    let children: [Child]
-}
-
-// MARK: - Child
-struct Child: Codable {
-    let data: ChildData
-}
-
-// MARK: - ChildData
-struct ChildData: Codable {
-    let author: String
-    let createdUTC: Int
-
-    enum CodingKeys: String, CodingKey {
-        case author
-        case createdUTC = "created_utc"
-    }
+enum URLImageError:Error{
+    case invalidURL
 }
 
 struct TopModel{
     var author:String
     var createdUTC:Int
+    var title:String
+    var thumbnail:String
+    var preview:String
+    var numComments:Int
     
     var createdString:String{
         let utcDateFormatter = DateFormatter()
@@ -48,4 +29,31 @@ struct TopModel{
         
         return utcDateFormatter.string(from: date)
     }
+    
+    func getURLThumbnail() throws -> URL {
+        guard let url = URL(string: thumbnail), thumbnail != "self", thumbnail != "default", thumbnail != "nsfw" else {
+            throw URLImageError.invalidURL
+        }
+        return url
+    }
+    
+    func getURLPreview() throws -> URL {
+        guard let url = URL(string: preview), preview != "self", preview != "default", preview != "nsfw" else {
+            throw URLImageError.invalidURL
+        }
+        return url
+    }
+    
+    func getURLImage() throws -> URL{
+        if let url = try? self.getURLThumbnail() {
+            return url
+        }
+        
+        if let url = try? self.getURLPreview() {
+            return url
+        }
+        
+        throw URLImageError.invalidURL
+    }
+    
 }
