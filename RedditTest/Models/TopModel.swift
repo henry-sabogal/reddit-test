@@ -37,4 +37,15 @@ struct ChildData: Codable {
 struct TopModel{
     var author:String
     var createdUTC:Int
+    
+    var createdString:String{
+        let utcDateFormatter = DateFormatter()
+        utcDateFormatter.dateStyle = .short
+        utcDateFormatter.timeStyle = .short
+        utcDateFormatter.timeZone = TimeZone(abbreviation: "UTC")
+        
+        let date = Date(timeIntervalSince1970: Double(createdUTC))
+        
+        return utcDateFormatter.string(from: date)
+    }
 }

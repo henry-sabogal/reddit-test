@@ -8,12 +8,18 @@
 import Foundation
 import Combine
 
+protocol DataViewDelegate:NSObjectProtocol {
+    func displayTopList(topList:[TopModel])
+}
+
 class ViewControllerPresenter {
     
     private let accessAuthViewModel:AccessAuthViewModel
     private let topViewModel:TopViewModel
     private var cancellable: AnyCancellable?
     private var cancellableTopList: AnyCancellable?
+    
+    weak private var dataViewDelegate:DataViewDelegate?
     
     init() {
         accessAuthViewModel = AccessAuthViewModel()
@@ -23,6 +29,10 @@ class ViewControllerPresenter {
         
         self.observeAccessTokenValue()
         self.observePostList()
+    }
+    
+    func setDataViewDelegate(dataViewDelegate:DataViewDelegate){
+        self.dataViewDelegate = dataViewDelegate
     }
     
     func observeAccessTokenValue(){
@@ -36,8 +46,9 @@ class ViewControllerPresenter {
     func observePostList(){
         cancellableTopList = topViewModel.$topList.sink{ [weak self] topList in
             if topList.count > 0 {
-                print(topList)
+                self?.dataViewDelegate?.displayTopList(topList: topList)
             }
         }
     }
+    
 }

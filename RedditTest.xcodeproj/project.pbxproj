@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		73301CD7264B993300D2BD74 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73301CD6264B993300D2BD74 /* PostCell.swift */; };
 		73765D222645046E00B6B9FA /* TopViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73765D212645046E00B6B9FA /* TopViewModel.swift */; };
 		73975373264206EC0038E044 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73975372264206EC0038E044 /* AppDelegate.swift */; };
 		73975375264206EC0038E044 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73975374264206EC0038E044 /* SceneDelegate.swift */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		73301CD6264B993300D2BD74 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		73765D212645046E00B6B9FA /* TopViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopViewModel.swift; sourceTree = "<group>"; };
 		7397536F264206EC0038E044 /* RedditTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RedditTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		73975372264206EC0038E044 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 		739753BA264251740038E044 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				73301CD6264B993300D2BD74 /* PostCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -325,6 +328,7 @@
 				739753A7264207840038E044 /* HTTPBasicAuthentication.swift in Sources */,
 				73975375264206EC0038E044 /* SceneDelegate.swift in Sources */,
 				739753B0264228C00038E044 /* AccessAuth.swift in Sources */,
+				73301CD7264B993300D2BD74 /* PostCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

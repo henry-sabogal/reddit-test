@@ -9,7 +9,7 @@ import Foundation
 import Combine
 
 class TopViewModel: ObservableObject{
-    private let url = URL(string: "https://oauth.reddit.com/r/subreddit/top")!
+    private let url = URL(string: "https://oauth.reddit.com/r/subreddit/best")!
     private var cancellable: AnyCancellable?
     
     @Published private(set) var topList: [TopModel] = []
